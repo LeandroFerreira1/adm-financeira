@@ -54,7 +54,7 @@ void menu(){
 
 }
 
-void valor_presente(){
+void valor_futuro(){
 
   float capital, i, m;
   int t;
@@ -69,7 +69,7 @@ void valor_presente(){
     printf("\tAo fim de %d periodos com taxa de %.2f o valor sera R$ %.2f\n",t,i,m);
 }
 
-void valor_futuro(){
+void valor_presente(){
   float capital, i, m;
   int t;
     printf("\n\nInforme o valor do capital:\n");
