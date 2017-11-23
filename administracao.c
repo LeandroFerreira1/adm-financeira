@@ -56,17 +56,17 @@ void menu(){
 
 void valor_futuro(){
 
-float capital, i, m;
-int t;
-  printf("\n\nInforme o valor do capital:\n");
-  scanf("%f",&capital);
-  printf("Informe o total de periodos:\n");
-  scanf("%d",&t);
-  printf("Informe o valor da taxa (%):\n");
-  scanf("%f",&i);
+  float capital, i, m;
+  int t;
+    printf("\n\nInforme o valor do capital:\n");
+    scanf("%f",&capital);
+    printf("Informe o total de periodos:\n");
+    scanf("%d",&t);
+    printf("Informe o valor da taxa (%):\n");
+    scanf("%f",&i);
 
-  m = capital*pow((1+(i/100)),t);
-  printf("\tAo fim de %d periodos com taxa de %.2f o valor sera R$ %.2f\n",t,i,m);
+    m = capital*pow((1+(i/100.0)),t);
+    printf("\tAo fim de %d periodos com taxa de %.2f o valor sera R$ %.2f\n",t,i,m);
 }
 
 void valor_presente(){
@@ -79,7 +79,7 @@ void valor_presente(){
     printf("Informe o valor da taxa (%):\n");
     scanf("%f",&i);
 
-    m = capital/pow((1+(i/100)),t);
+    m = capital/pow((1+(i/100.0)),t);
     printf("\tAo fim de %d periodos com taxa de %.2f o valor sera R$ %.2f\t\n",t,i,m);
 
 }
