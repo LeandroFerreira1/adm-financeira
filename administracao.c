@@ -47,7 +47,7 @@ void menu(){
   		taxa_interna_retorno();
   		break;
 	}
-  
+
 	while(op != 9){
 		menu();
 	}
@@ -65,7 +65,7 @@ int t;
   printf("Informe o valor da taxa (%):\n");
   scanf("%f",&i);
 
-  m = capital*pow(1+(i/100),t);
+  m = capital*pow((1+(i/100)),t);
   printf("\tAo fim de %d periodos com taxa de %.2f o valor sera R$ %.2f\n",t,i,m);
 }
 
@@ -79,7 +79,7 @@ void valor_presente(){
     printf("Informe o valor da taxa (%):\n");
     scanf("%f",&i);
 
-    m = (capital/pow(1+(i/100),t));
+    m = capital/pow((1+(i/100)),t);
     printf("\tAo fim de %d periodos com taxa de %.2f o valor sera R$ %.2f\t\n",t,i,m);
 
 }
