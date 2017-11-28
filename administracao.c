@@ -8,6 +8,8 @@ void valor_presente();
 void valor_presente_liquido();
 void payback();
 void taxa_interna_retorno();
+void ponto_equilibrio();
+
 
 int main(){
   menu();
@@ -24,6 +26,7 @@ void menu(){
 		printf("\n\t| 3 - Calcular valor presente liquido (VPL) |");
     printf("\n\t| 4 - Calcular payback                      |");
 		printf("\n\t| 5 - Calcular taxa interna de retorno (TIR)|");
+    printf("\n\t| 6 - Calcular ponto de equilibrio          |");
 		printf("\n\t| 9 - SAIR                                  |");
 		printf("\n\t|-------------------------------------------|\n\n");
 
@@ -46,6 +49,9 @@ void menu(){
     case 5:
   		taxa_interna_retorno();
   		break;
+    case 6:
+      ponto_equilibrio();
+      break;
 	}
 
 	while(op != 9){
@@ -188,4 +194,33 @@ void taxa_interna_retorno(){
     }while(aux > 0);
 
     printf("\tA taxa interna de retorno e igual a: %.2f\t\n",tir);
+}
+
+
+void ponto_equilibrio(){
+
+  float cf, pv, cv,pe;
+  int pj, pa;
+
+  printf("Informe o valor do custo fixo:\n");
+  scanf("%f",&cf);
+  printf("Informe o valor do preco de venda unitario:\n");
+  scanf("%f",&pv);
+  printf("Informe o valor do custo variavel unitario:\n");
+  scanf("%f",&cv);
+  printf("Informe o valor da projecao de vendas:\n");
+  scanf("%d",&pj);
+
+  pe = cf / (pv-cv);
+  pa = ceil(pe);
+
+  printf("O valor de horas/mes: %d\n", pa);
+
+  if (pj > pe){
+    printf("tendo vendido %d horas/mes, estou acima do ponto de equilibrio.(positivo)\n",pj);
+  }else if (pj == pe){
+    printf("tendo vendido %d horas/mes, estou no limite do ponto de equilibrio.(zerado)\n",pj);
+  }else {
+    printf("tendo vendido %d horas/mes, estou abaixo do ponto de equilibrio.(negativo)\n",pj);
+  }
 }
