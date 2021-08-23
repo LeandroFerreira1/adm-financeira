@@ -61,6 +61,8 @@ void menu(){
 }
 
 void valor_presente(){
+	
+	//teste//
 
   float capital, i, m;
   int t;
